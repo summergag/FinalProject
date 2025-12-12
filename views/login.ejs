@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1 class="title">Welcome to Movie Reviews</h1>
+
+        <% if (typeof error !== "undefined") { %>
+        <p class="error-message"><%= error %></p>
+        <% } %>
+
+        <div class="login-box">
+            <h2>Login</h2>
+            <form action="/api/users/login" method="POST">
+
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <p class="register-text">
+                Don't have an account? <a href="/register">Register here</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

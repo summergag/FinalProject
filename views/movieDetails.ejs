@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= movie.title %></title>
+    <link rel="stylesheet" href="/css/movieDetails.css">
+</head>
+<body>
+
+<h1><%= movie.title %> (<%= movie.year %>)</h1>
+
+<p><%= movie.description %></p>
+
+<h2>
+    Reviews
+    <% if (movie.reviews.length > 0) { %> 
+        - Average:
+        <span class="average-rating">
+            <%= (
+                movie.reviews.reduce((a,b)=>a+b.rating,0) /
+                movie.reviews.length
+            ).toFixed(1) %>
+            ( <%= movie.reviews.length %> reviews )
+        </span>
+    <% } else { %>
+        - No reviews yet
+    <% } %>
+</h2>
+
+<% if (movie.reviews.length === 0) { %>
+    <p>No reviews yet.</p>
+<% } else { %>
+    <ul>
+        <% movie.reviews.forEach(r => { %>
+            <li>
+                <strong><%= r.username %></strong> - Rating: <%= r.rating %>
+                <p><%= r.comment %></p>
+            </li>
+        <% }) %>
+    </ul>
+<% } %>
+
+<hr>
+
+ <% if (!userReviewed) { %>
+        <div class="add-review-container">
+            <button class="add-review-button" onclick="toggleReviewForm()">Add Review</button>
+
+            <form id="add-review-form" action="/api/movies/<%= movie.id %>/reviews" method="POST">
+                <label>Rating (1-5):</label>
+                <input type="number" name="rating" min="1" max="5" required>
+
+                <textarea name="comment" placeholder="Your review..." required></textarea>
+
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
+    <% } else { %>
+        <p>You already reviewed this movie.</p>
+    <% } %>
+
+    <p><a href="/movies">Back to movies</a></p>
+
+    <script>
+        function toggleReviewForm() {
+            const form = document.getElementById('add-review-form');
+            form.style.display = form.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+
+</body>
+</html>

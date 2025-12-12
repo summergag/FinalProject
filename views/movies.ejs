@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Movies</title>
+    <link rel="stylesheet" href="/css/movies.css">
+</head>
+<body>
+
+    <h1>All Movies</h1>
+    <a class="logout" href="/api/users/logout">Logout</a>
+
+    <div class="add-movie-container">
+        <button class="add-movie-button" onclick="toggleForm()">Add Movie</button>
+    </div>
+
+    <form id="add-movie-form" action="/api/movies" method="POST">
+        <input type="text" name="title" placeholder="Movie Title" required>
+        <input type="number" name="year" placeholder="Year" min="1880" max="2100" required>
+        <textarea name="description" placeholder="Description" required></textarea>
+        <button type="submit">Add Movie</button>
+    </form>
+
+    <div class="movies-list">
+        <% movies.forEach(movie => { %>
+            <div class="movie-card">
+                <h3>
+                    <a href="/movies/<%= movie.id %>"><%= movie.title %></a> 
+                    (<%= movie.year %>)
+                </h3>
+                
+                <% if (movie.reviews.length > 0) { %>
+                    <p class="average-rating">
+                        Average Rating: 
+                        <%= (
+                            movie.reviews.reduce((a,b)=>a+b.rating,0) /
+                            movie.reviews.length
+                        ).toFixed(1) %>
+                        ( <%= movie.reviews.length %> reviews )
+                    </p>
+                <% } else { %>
+                    <p class="average-rating">No reviews yet</p>
+                <% } %>
+
+                <p><%= movie.description %></p>
+            </div>
+        <% }) %>
+    </div>
+
+    <script>
+        function toggleForm() {
+            const form = document.getElementById('add-movie-form');
+            form.style.display = form.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
