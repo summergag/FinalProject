@@ -1,0 +1,111 @@
+body {
+    background: #0d1117;
+    color: #840b48;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+   color: #bf2672;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+a {
+    color: #bf2672;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #d35795;
+    text-decoration: underline;
+}
+
+hr {
+    border-color: #9e2561;
+    margin: 30px 0;
+}
+
+/* Review list styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background: #161b22;
+    border: 1px solid #30363d;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ul li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px #c55e92;
+}
+
+ul li p {
+    margin: 5px 0 0 0;
+}
+
+/* Add Review Button */
+.add-review-button {
+    padding: 10px 20px;
+    background: #940e51;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.add-review-button:hover {
+    background: #9e2561;
+}
+
+/* Add Review Form Dropdown */
+#add-review-form {
+    display: none;
+    margin: 20px auto;
+    max-width: 400px;
+    background: #161b22;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #c55e92;
+}
+
+#add-review-form input,
+#add-review-form textarea,
+#add-review-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+#add-review-form button {
+    background: #940e51;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#add-review-form button:hover {
+    background: #9e2561;
+}
+
+/* Average Rating Styling */
+.average-rating {
+    font-weight: bold;
+    margin-bottom: 10px;
+}

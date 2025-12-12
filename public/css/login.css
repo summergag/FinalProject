@@ -1,0 +1,92 @@
+/* General page layout */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #0d1117;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #840b48;
+}
+
+/* Center container */
+.login-container {
+    text-align: center;
+    width: 350px;
+}
+
+/* Big title */
+.title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Error message */
+.error-message {
+    color: #ff4d4d;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Login box styling */
+.login-box {
+    background: #161b22;
+    color: #9e2561;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px #c55e92;
+}
+
+/* Form labels */
+.login-box label {
+    display: block;
+    margin: 10px 0 5px;
+    text-align: left;
+}
+
+/* Inputs */
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    margin-bottom: 15px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+/* Submit button */
+.login-box button {
+    width: 100%;
+    padding: 10px;
+    background: #940e51;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.login-box button:hover {
+    background: #9e2561;
+}
+
+/* Register text */
+.register-text {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.register-text a {
+    color: #bf2672;
+    text-decoration: none;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+    color: #d35795;
+}

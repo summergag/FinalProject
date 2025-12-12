@@ -1,0 +1,109 @@
+body {
+    background: #0d1117;
+    color: #840b48;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+a {
+    color: #bf2672;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #d35795;
+    text-decoration: underline;
+}
+
+.logout {
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Add Movie Button */
+.add-movie-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.add-movie-button {
+    padding: 10px 20px;
+    background: #940e51;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-movie-button:hover {
+    background: #9e2561;
+}
+
+/* Add Movie Form Dropdown */
+#add-movie-form {
+    display: none;
+    margin: 20px auto;
+    max-width: 400px;
+    background: #161b22;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #c55e92;
+}
+
+#add-movie-form input,
+#add-movie-form textarea,
+#add-movie-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+#add-movie-form button {
+    background: #940e51;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#add-movie-form button:hover {
+    background: #9e2561;
+}
+
+/* Movie Cards */
+.movie-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px #c55e92;
+}
+
+.movie-card h3 {
+    margin: 0 0 5px;
+}
+
+.movie-card .average-rating {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.movie-card p {
+    margin: 5px 0;
+}
