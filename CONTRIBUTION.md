@@ -9,7 +9,7 @@
 * Worked on some of backend, the login and register page, and some of the css for some of the pages.
 
 ### 3. Akshith Gojuru
-* Worked on backend and configured JS functions for code.
+* I worked on the backend, architecture and routes, including loading movie data,And managing session logic and JSON storage to keep the app running smoothly.
 
 ### 4. Papat Thanitkhunkitti
 * Work on movie poster function when add movielist & edit button to change detail on movie description, etc. work little bit on UI.
