@@ -6,7 +6,7 @@
 *  Worked on home/dashboard page and ensured adequate functionality.
 
 ### 2. Summer Gagliardotto
-*
+* Worked on some of backend, the login and register page, and some of the css for some of the pages.
 
 ### 3. Akshith Gojuru
 * 
