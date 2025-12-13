@@ -11,6 +11,6 @@
 ### 3. Akshith Gojuru
 * 
 
-### 3. Papat Thanitkhunkitti
-* 
+### 4. Papat Thanitkhunkitti
+* Work on movie poster function when add movielist & edit button to change detail on movie description, etc. work little bit on UI.
 
