@@ -34,7 +34,4 @@ Users can view movies, post reviews, rate movies.
 * Clone the Repository
 * ```git clone https://github.com/yourusername/FinalProject-3.git```
 *  ```cd FinalProject-3```
-* "npm install"
-* node app.js
-
 
