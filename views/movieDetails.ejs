@@ -6,25 +6,41 @@
 </head>
 <body>
 
-<h1><%= movie.title %> (<%= movie.year %>)</h1>
-
-<p><%= movie.description %></p>
-
-<h2>
-    Reviews
-    <% if (movie.reviews.length > 0) { %> 
-        - Average:
-        <span class="average-rating">
-            <%= (
-                movie.reviews.reduce((a,b)=>a+b.rating,0) /
-                movie.reviews.length
-            ).toFixed(1) %>
-            ( <%= movie.reviews.length %> reviews )
-        </span>
-    <% } else { %>
-        - No reviews yet
-    <% } %>
-</h2>
+    <div class="movie-header">
+    
+        <div class="movie-detail-poster-container">
+            <% if (movie.posterPath) { %>
+                <img src="<%= movie.posterPath %>" alt="<%= movie.title %> Poster" class="movie-detail-poster">
+            <% } else { %>
+                <img src="/images/placeholder.png" alt="No Poster Available" class="movie-detail-poster-fallback">
+            <% } %>
+        </div>
+        
+        <div class="movie-info">
+            <h1><%= movie.title %> (<%= movie.year %>)</h1>
+            
+            <h2 class="rating-summary">
+                <% if (movie.reviews.length > 0) { %> 
+                    <span class="rating-value">
+                        ★ <%= (movie.reviews.reduce((a,b)=>a+b.rating,0) / movie.reviews.length).toFixed(1) %> / 5
+                    </span>
+                    <span class="review-count">(<%= movie.reviews.length %> reviews)</span>
+                <% } else { %>
+                    <span class="no-reviews">No reviews yet</span>
+                <% } %>
+            </h2>
+            
+            <p class="movie-description"><%= movie.description %></p>
+            
+            <div class="edit-movie-container">
+                <a href="/movies/<%= movie.id %>/edit">
+                    <button class="edit-movie-button">Edit Movie Details</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <hr> <h2>User Reviews</h2>
 
 <% if (movie.reviews.length === 0) { %>
     <p>No reviews yet.</p>

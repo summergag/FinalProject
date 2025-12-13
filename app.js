@@ -65,6 +65,18 @@ app.get("/movies", (req, res) => {
     res.render("movies", { movies });
 });
 
+//Render Edit movie
+app.get("/movies/:id/edit", (req, res) => {
+    if (!req.session.user) return res.redirect("/login");
+
+    const movies = readMovies();
+    const movie = movies.find(m => m.id == req.params.id);
+
+    if (!movie) return res.send("Movie not found");
+
+    res.render("editMovie", { movie });
+});
+
 // Single movie details
 app.get("/movies/:id", (req, res) => {
     if (!req.session.user) return res.redirect("/login");

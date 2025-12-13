@@ -1,13 +1,15 @@
+/* General page layout */
 body {
     background: #0d1117;
-    color: #840b48;
-    font-family: Arial, sans-serif;
+    color: #c5c5c5; /* Use lighter color for general text */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 20px;
 }
 
 h1, h2 {
     text-align: center;
+    color: #bf2672; /* Pink accent */
 }
 
 a {
@@ -22,13 +24,15 @@ a:hover {
 
 .logout {
     display: block;
+    text-align: right;
     margin-bottom: 20px;
+    color: #acacac;
 }
 
-/* Add Movie Button */
+/* --- ADD MOVIE BUTTON & FORM --- */
 .add-movie-container {
     text-align: center;
-    margin: 20px 0;
+    margin: 20px 0 40px;
 }
 
 .add-movie-button {
@@ -39,71 +43,118 @@ a:hover {
     border-radius: 6px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s;
 }
 
 .add-movie-button:hover {
-    background: #9e2561;
+    background: #bf2672;
 }
 
 /* Add Movie Form Dropdown */
 #add-movie-form {
     display: none;
     margin: 20px auto;
-    max-width: 400px;
+    max-width: 500px; 
     background: #161b22;
-    padding: 20px;
+    padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 0 10px #c55e92;
+    box-shadow: 0 0 10px rgba(191, 38, 114, 0.4);
+    text-align: left;
+}
+
+#add-movie-form label {
+    display: block;
+    color: #bf2672;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 #add-movie-form input,
-#add-movie-form textarea,
-#add-movie-form button {
+#add-movie-form textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 6px;
-    border: 1px solid #aaa;
+    border: 1px solid #30363d;
+    background: #0d1117;
+    color: #c5c5c5;
     font-size: 15px;
     box-sizing: border-box;
 }
 
-#add-movie-form button {
+#add-movie-form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
     background: #940e51;
     color: white;
     border: none;
     cursor: pointer;
     transition: 0.2s;
+    font-weight: bold;
 }
 
 #add-movie-form button:hover {
-    background: #9e2561;
+    background: #bf2672;
 }
 
-/* Movie Cards */
+
+/* --- MOVIE LISTING (GRID LAYOUT) --- */
+.movies-list {
+    display: grid;
+    /* Responsive grid: 4 columns max, minimum width of 250px per card */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0 50px; 
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
 .movie-card {
     background: #161b22;
-    border: 1px solid #30363d;
-    padding: 20px;
+    padding: 0; 
     border-radius: 12px;
-    margin-bottom: 20px;
+    overflow: hidden; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .movie-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 10px #c55e92;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(191, 38, 114, 0.6);
 }
 
-.movie-card h3 {
-    margin: 0 0 5px;
+.movie-poster-container {
+    height: 350px; 
+    overflow: hidden;
 }
 
-.movie-card .average-rating {
-    font-weight: bold;
-    margin-bottom: 10px;
+.movie-poster, .movie-poster-fallback {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
 }
 
-.movie-card p {
+.movie-card-content {
+    padding: 15px 15px 20px; 
+}
+
+.movie-card-content h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: 1.2em;
+}
+
+.movie-card-content p {
     margin: 5px 0;
+    color: #acacac;
+}
+
+.average-rating {
+    font-weight: bold;
+    color: #ffd700; /* Gold color for rating */
 }

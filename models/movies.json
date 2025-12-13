@@ -2,7 +2,7 @@
   {
     "id": "176763f3-56b9-4faf-85e5-507402fff60f",
     "title": "Zootopia 2",
-    "year": 2025,
+    "year": "2025",
     "description": "Follows Judy Hopps and Nick Wilde as they go undercover in the mysterious Marsh Market to solve a case involving a reptile named Gary, uncovering a conspiracy about the city's origins and testing their partnership as they explore new, wilder parts of Zootopia, from underwater realms to snowy deserts.",
     "reviews": [
       {
@@ -15,7 +15,8 @@
         "rating": 4,
         "comment": "I think I loved this movie more than my kids haha. Didn't think it could be better than the first movie, but it was!"
       }
-    ]
+    ],
+    "posterPath": "/images/1c230a99-e53b-4172-ad9e-96dd6263fcf6.webp"
   },
   {
     "id": "2a9124b9-b0fb-4e76-b39d-76e1b184fbb7",
@@ -28,13 +29,23 @@
         "rating": 4,
         "comment": "I loved this movie. It was a very emotional movie, definitely cried haha! But worth the watch :)"
       }
-    ]
+    ],
+    "posterPath": "/images/23bf8491-41d7-4667-817d-885736070bca.jpg"
   },
   {
     "id": "ebd950ff-9183-4680-94f2-00d609009ca2",
     "title": "Tropic Thunder",
     "year": "2008",
     "description": "A satirical action comedy film about a group of self-absorbed actors who are forced to become the soldiers they are portraying when they accidentally stumble into a real-life war zone in Southeast Asia.",
+    "reviews": [],
+    "posterPath": "/images/ec9f99b5-6ac8-43a7-8e79-0845ad9dc6b3.jpg"
+  },
+  {
+    "id": "b5b9525f-1e18-421b-9797-6814981e0d0a",
+    "title": "interstellar",
+    "year": "2014",
+    "description": "When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.",
+    "posterPath": "/images/5886c93e-3248-4eb4-a4ed-a07c4187fc72.jpg",
     "reviews": []
   }
 ]

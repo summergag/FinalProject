@@ -2,13 +2,13 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background: #0d1117;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Nicer font */
+    background: #0d1117; /* Dark background */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #840b48;
+    color: #c5c5c5; /* Light gray text for readability */
 }
 
 /* Center container */
@@ -22,6 +22,7 @@ body {
     font-size: 32px;
     margin-bottom: 20px;
     font-weight: bold;
+    color: #bf2672; /* Pink accent */
 }
 
 /* Error message */
@@ -33,11 +34,16 @@ body {
 
 /* Login box styling */
 .login-box {
-    background: #161b22;
-    color: #9e2561;
-    padding: 25px;
+    background: #161b22; /* Slightly lighter dark shade */
+    padding: 30px; 
     border-radius: 12px;
-    box-shadow: 0 0 12px #c55e92;
+    box-shadow: 0 0 15px rgba(191, 38, 114, 0.4); /* Pink/purple glow */
+}
+
+.login-box h2 {
+    color: #c5c5c5; /* White heading */
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
 /* Form labels */
@@ -45,6 +51,8 @@ body {
     display: block;
     margin: 10px 0 5px;
     text-align: left;
+    color: #bf2672; /* Pink label color */
+    font-weight: bold;
 }
 
 /* Inputs */
@@ -52,41 +60,50 @@ body {
     width: 100%;
     padding: 10px;
     border-radius: 6px;
-    border: 1px solid #aaa;
-    margin-bottom: 15px;
+    border: 1px solid #30363d; /* Dark border */
+    background: #0d1117; /* Very dark input background */
+    color: #c5c5c5; /* White text in inputs */
     font-size: 15px;
     box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.login-box input:focus {
+    outline: none;
+    border-color: #9e2561; /* Pink border on focus */
 }
 
 /* Submit button */
 .login-box button {
     width: 100%;
-    padding: 10px;
-    background: #940e51;
+    padding: 12px;
+    margin-top: 20px;
+    background: #940e51; /* Primary button color */
+    color: white;
     border: none;
     border-radius: 6px;
-    color: white;
-    font-size: 16px;
     cursor: pointer;
-    transition: 0.2s;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s, box-shadow 0.3s;
 }
 
 .login-box button:hover {
-    background: #9e2561;
+    background: #bf2672; /* Lighter pink on hover */
+    box-shadow: 0 0 8px rgba(191, 38, 114, 0.6);
 }
 
 /* Register text */
 .register-text {
-    margin-top: 15px;
-    font-size: 14px;
+    margin-top: 20px;
+    color: #acacac;
 }
 
 .register-text a {
-    color: #bf2672;
+    color: #9e2561; /* Pink link color */
     text-decoration: none;
 }
 
 .register-text a:hover {
     text-decoration: underline;
-    color: #d35795;
 }

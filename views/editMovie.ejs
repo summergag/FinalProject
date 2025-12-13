@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit <%= movie.title %></title>
+    <link rel="stylesheet" href="/css/movieDetails.css">
+    </head>
+<body>
+
+    <a href="/movies/<%= movie.id %>">Back to movie details</a>
+
+    <h1>Edit Movie: <%= movie.title %></h1>
+
+    <form id="edit-movie-form" action="/api/movies/<%= movie.id %>" method="POST" enctype="multipart/form-data">
+        
+        <input type="hidden" name="_method" value="PATCH">
+
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" value="<%= movie.title %>" required>
+
+        <label for="year">Year:</label>
+        <input type="number" name="year" id="year" value="<%= movie.year %>" min="1880" max="2100" required>
+
+        <label for="description">Description:</label>
+        <textarea name="description" id="description" required><%= movie.description %></textarea>
+
+        <% if (movie.posterPath) { %>
+            <p>Current Poster:</p>
+            <img src="<%= movie.posterPath %>" alt="<%= movie.title %> Poster" style="max-width: 150px; margin-bottom: 10px; display: block;">
+            <label>
+                <input type="checkbox" name="deletePoster" value="true"> Delete existing poster
+            </label>
+            <br>
+        <% } %>
+
+        <label for="poster">Change Poster (Select a new image file):</label>
+        <input type="file" name="poster" id="poster" accept="image/*">
+
+        <button type="submit">Save Changes</button>
+    </form>
+
+</body>
+</html>
