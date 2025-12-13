@@ -1,17 +1,20 @@
+/* --- 1. GENERAL STYLES --- */
 body {
-    background: #0d1117;
-    color: #840b48;
+    background: #0d1117; /* Dark background */
+    color: #c5c5c5; /* Light gray text for readability */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
 }
 
 h1 {
-   color: #bf2672;
+   color: #bf2672; /* Pink accent */
 }
 
 h1, h2, h3 {
-    text-align: center;
+    /* Set alignment to left for better integration with the two-column header */
+    text-align: left; 
+    color: #bf2672; 
 }
 
 a {
@@ -29,7 +32,79 @@ hr {
     margin: 30px 0;
 }
 
-/* Review list styling */
+/* --- 2. MOVIE DETAILS HEADER LAYOUT (Two-Column Layout) --- */
+.movie-header {
+    display: flex; /* Enables side-by-side layout */
+    gap: 30px;     /* Space between poster and text */
+    max-width: 1200px; 
+    margin: 0 auto 40px; 
+    align-items: flex-start; /* Aligns content to the top */
+}
+
+.movie-info {
+    flex-grow: 1;
+}
+
+/* Poster Container */
+.movie-detail-poster-container {
+    flex-shrink: 0; 
+    width: 250px;
+    height: 375px; 
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    margin-bottom: 0;
+}
+
+.movie-detail-poster, .movie-detail-poster-fallback {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Rating Summary */
+.rating-summary {
+    text-align: left;
+    margin-top: -10px; 
+    margin-bottom: 20px;
+    font-size: 1.5em; 
+    color: #c5c5c5;
+}
+
+.rating-value {
+    color: #ffd700; /* Gold/Yellow for the star/rating */
+    font-weight: bold;
+}
+
+.review-count {
+    color: #9e2561; /* Accent color for the review count */
+    font-size: 0.7em;
+    margin-left: 10px;
+}
+
+.movie-description {
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #acacac; 
+}
+
+/* Edit Movie Button */
+.edit-movie-button {
+    padding: 10px 20px;
+    background: #940e51;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.edit-movie-button:hover {
+    background: #9e2561;
+}
+
+/* --- 3. REVIEW LIST STYLING --- */
 ul {
     list-style-type: none;
     padding: 0;
@@ -49,11 +124,38 @@ ul li:hover {
     box-shadow: 0 0 10px #c55e92;
 }
 
-ul li p {
-    margin: 5px 0 0 0;
+/* Reviewer Name */
+ul li strong {
+    color: #bf2672; 
+    font-size: 1.1em;
+    display: block; 
+    margin-bottom: 5px;
 }
 
-/* Add Review Button */
+/* Review Rating */
+ul li .review-rating {
+    float: right; 
+    color: #ffd700; 
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Clear float after rating */
+ul li::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Review Comment Body */
+ul li p {
+    color: #c5c5c5; 
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #30363d; 
+}
+
+/* --- 4. ADD REVIEW FORM STYLING --- */
 .add-review-button {
     padding: 10px 20px;
     background: #940e51;
@@ -69,7 +171,6 @@ ul li p {
     background: #9e2561;
 }
 
-/* Add Review Form Dropdown */
 #add-review-form {
     display: none;
     margin: 20px auto;
@@ -80,31 +181,53 @@ ul li p {
     box-shadow: 0 0 10px #c55e92;
 }
 
+/* Input/Textarea consistency for ALL forms (Add Review and Edit Movie) */
 #add-review-form input,
 #add-review-form textarea,
-#add-review-form button {
+#edit-movie-form input,
+#edit-movie-form textarea,
+#edit-movie-form select { 
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 6px;
-    border: 1px solid #aaa;
+    /* Dark theme consistency */
+    border: 1px solid #30363d; 
+    background: #0d1117; 
+    color: #c5c5c5; 
     font-size: 15px;
     box-sizing: border-box;
 }
 
-#add-review-form button {
+#add-review-form button,
+#edit-movie-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
     background: #940e51;
     color: white;
     border: none;
     cursor: pointer;
     transition: 0.2s;
+    font-weight: bold;
 }
 
-#add-review-form button:hover {
+#add-review-form button:hover,
+#edit-movie-form button:hover {
     background: #9e2561;
 }
 
-/* Average Rating Styling */
+/* Form Labels consistency for ALL forms */
+#add-review-form label,
+#edit-movie-form label {
+    display: block;
+    color: #bf2672;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Average Rating Styling (Legacy, but kept for safety) */
 .average-rating {
     font-weight: bold;
     margin-bottom: 10px;
