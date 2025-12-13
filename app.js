@@ -34,7 +34,7 @@ function readMovies() {
     const filePath = path.join(__dirname, "models/movies.json");
 
     if (!fs.existsSync(filePath)) {
-        fs.writeFileSync(filePath, "[]"); // ensure file exists
+        fs.writeFileSync(filePath, "[]");
     }
 
     return JSON.parse(fs.readFileSync(filePath));
@@ -86,10 +86,8 @@ app.get("/movies/:id", (req, res) => {
 
     if (!movie) return res.send("Movie not found");
 
-    // Ensure movie.reviews exists
     movie.reviews = movie.reviews || [];
 
-    // Check if user already reviewed
     const userReviewed = movie.reviews.some(
         r => r.username === req.session.user.username
     );
