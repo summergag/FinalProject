@@ -50,7 +50,6 @@ router.post("/login", (req, res) => {
     );
 
     if (!user) {
-        // Render login.ejs again WITH an error message
         return res.render("login", { error: "Invalid username or password." });
     }
 

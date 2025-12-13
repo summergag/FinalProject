@@ -1,18 +1,16 @@
-/* --- 1. GENERAL STYLES --- */
 body {
-    background: #0d1117; /* Dark background */
-    color: #c5c5c5; /* Light gray text for readability */
+    background: #0d1117;
+    color: #c5c5c5;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
 }
 
 h1 {
-   color: #bf2672; /* Pink accent */
+   color: #bf2672;
 }
 
 h1, h2, h3 {
-    /* Set alignment to left for better integration with the two-column header */
     text-align: left; 
     color: #bf2672; 
 }
@@ -32,13 +30,12 @@ hr {
     margin: 30px 0;
 }
 
-/* --- 2. MOVIE DETAILS HEADER LAYOUT (Two-Column Layout) --- */
 .movie-header {
-    display: flex; /* Enables side-by-side layout */
-    gap: 30px;     /* Space between poster and text */
+    display: flex;
+    gap: 30px;
     max-width: 1200px; 
     margin: 0 auto 40px; 
-    align-items: flex-start; /* Aligns content to the top */
+    align-items: flex-start;
 }
 
 .movie-info {
@@ -72,12 +69,12 @@ hr {
 }
 
 .rating-value {
-    color: #ffd700; /* Gold/Yellow for the star/rating */
+    color: #ffd700;
     font-weight: bold;
 }
 
 .review-count {
-    color: #9e2561; /* Accent color for the review count */
+    color: #9e2561;
     font-size: 0.7em;
     margin-left: 10px;
 }
@@ -104,7 +101,6 @@ hr {
     background: #9e2561;
 }
 
-/* --- 3. REVIEW LIST STYLING --- */
 ul {
     list-style-type: none;
     padding: 0;
@@ -155,7 +151,6 @@ ul li p {
     border-top: 1px solid #30363d; 
 }
 
-/* --- 4. ADD REVIEW FORM STYLING --- */
 .add-review-button {
     padding: 10px 20px;
     background: #940e51;
@@ -181,7 +176,7 @@ ul li p {
     box-shadow: 0 0 10px #c55e92;
 }
 
-/* Input/Textarea consistency for ALL forms (Add Review and Edit Movie) */
+
 #add-review-form input,
 #add-review-form textarea,
 #edit-movie-form input,
@@ -191,7 +186,6 @@ ul li p {
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 6px;
-    /* Dark theme consistency */
     border: 1px solid #30363d; 
     background: #0d1117; 
     color: #c5c5c5; 
@@ -218,7 +212,6 @@ ul li p {
     background: #9e2561;
 }
 
-/* Form Labels consistency for ALL forms */
 #add-review-form label,
 #edit-movie-form label {
     display: block;
@@ -227,7 +220,6 @@ ul li p {
     font-weight: bold;
 }
 
-/* Average Rating Styling (Legacy, but kept for safety) */
 .average-rating {
     font-weight: bold;
     margin-bottom: 10px;
